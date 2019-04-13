@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flex布局</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			display: flex;
+			padding: 10px;
+			margin: 20px;
+			border: 1px solid #ddd;
+		}
+		.con-item {
+			margin: 10px;
+			padding: 10px;
+			border: 1px solid #ddd;
+			background-color: #eee;
+		}
+		.container-b {
+			flex-direction: row-reverse;
+			justify-content: flex-end;
+		}
+		.container-c {
+			flex-direction: column;
+			justify-content: center;
+		}
+		.container-d {
+			flex-direction: column-reverse;
+			justify-content: space-around;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container container-a">
+		<div class="con-item">flex-item</div>
+		<img  class="con-item" src="../_commonImg/1.jpg">
+		<p class="con-item">flex-item</p>
+		<span class="con-item">行内 flex-item</span>	
+	</div>
+	<div class="container container-b">
+		<div class="con-item">flex-item</div>
+		<img  class="con-item" src="../_commonImg/1.jpg">
+		<p class="con-item">flex-item</p>
+		<span class="con-item">行内 flex-item</span>	
+	</div>
+	<div class="container container-c">
+		<div class="con-item">flex-item</div>
+		<img  class="con-item" src="../_commonImg/1.jpg">
+		<p class="con-item">flex-item</p>
+		<span class="con-item">行内 flex-item</span>	
+	</div>
+	<div class="container container-d">
+		<div class="con-item">flex-item</div>
+		<img  class="con-item" src="../_commonImg/1.jpg">
+		<p class="con-item">flex-item</p>
+		<span class="con-item">行内 flex-item</span>	
+	</div>
+</body>
+</html>

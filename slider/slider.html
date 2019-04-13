@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="slider.js"></script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.con {
+			margin: 30px 0;
+			width: 100%;
+			height: 320px;
+			overflow: hidden;
+			background-color: #ecefb8;
+		}
+		.slider-wrap {
+			position: relative;
+			margin: 0 auto;
+			width: 950px;
+			height: 320px;
+			overflow: hidden;
+		}
+		.slider-wrap>li{
+			display: none;
+			width: 100%;
+			height: 100%;
+			list-style-type: none;
+		}
+		
+		.slider-wrap>li.show{
+			display: block;
+		}
+		.dots-wrap {
+			position: absolute;
+			bottom: 20px;
+			left: 425px;
+			height: 7px;
+			text-align: center;
+		}
+
+		.dots {
+			float: left;
+			margin-right: 10px;
+			width: 16px;
+			height: 16px;
+			border-radius: 16px;
+			list-style-type: none;
+			background-color: rgba(255,255,255,.4);
+		}
+		.dots.on {
+			background-color: #00d2ff;
+		}
+		.testDiv ,.testDiv2{
+			width: 200px;
+			height: 200px;
+			background: #000;
+		}
+		.testDiv2 {
+			background: #f00;
+		}
+	</style>
+	<script>
+		//声明_czc对象:
+		var _czc = _czc || [];
+		//绑定siteid，请用您的siteid替换下方"XXXXXXXX"部分
+		_czc.push(["_setAccount", "1255166746"]);
+	</script>
+</head>
+<body>
+	<div class="con">
+		<ul class="slider-wrap">
+			<li class="show"><img src="img/img1.jpg" alt=""></li>
+			<li><img src="img/img2.jpg" alt=""></li>
+			<li><img src="img/img3.jpg" alt=""></li>
+			<li><img src="img/img4.jpg" alt=""></li>
+			<li><img src="img/img5.jpg" alt=""></li>
+			<ul class="dots-wrap">
+				<li class="dots on"></li>
+				<li class="dots"></li>
+				<li class="dots"></li>
+				<li class="dots"></li>
+				<li class="dots"></li>
+			</ul>
+		</ul>
+	</div>
+	<div class="testDiv"></div>
+	<button id="bnt">变宽</button>
+	<button id="bnt2">变高</button>
+	<div class="testDiv2"></div>
+	<button id="bnt3">变窄</button>
+	<button id="bnt4">变矮</button>
+	<script type="text/javascript">
+		slider($('.con'),$('.slider-wrap>li'),'show',$('.dots'),'on',[true,3000],true,['#ecefb8','#9a0000','#010103','#fdcc80','#000000']);
+
+		var i = 0,j=0,k=0,n=0;
+		$('#bnt').on('click',function(){
+			i++;
+			$('.testDiv').css('width',200+i*5);
+			_czc.push(["_trackEvent",'测试div','变宽度','通过点击改变宽度','5','bnt']);
+		});
+		$('#bnt2').on('click',function(){
+			j++;
+			$('.testDiv').css('height',200+j*5);
+			_czc.push(["_trackEvent",'测试div','变高度','通过点击改变高度','5','bnt2']);
+		});
+		$('#bnt3').on('click',function(){
+			k++;
+			$('.testDiv2').css('width',200-k*5);
+			_czc.push(["_trackEvent",'测试div2','变宽度','通过点击改变宽度','5','bnt3']);
+		});
+		$('#bnt4').on('click',function(){
+			n++;
+			$('.testDiv2').css('height',200-n*5);
+			_czc.push(["_trackEvent",'测试div2','变高度','通过点击改变高度','5','bnt4']);
+		});
+	</script>
+	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1255166746'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1255166746' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

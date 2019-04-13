@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>未知宽高img水平垂直居中</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			position: relative;
+			float: left;
+			margin: 2%;
+			width: 46%;
+			height: 300px;
+			background-color: #eee;
+		}
+		.block-a {/*方式一*/
+			margin: auto;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+		}
+		.block-b {/*方式二*/
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		.container-c {/*方式三*/
+			line-height: 300px;
+			text-align: center;
+		}
+		.block-c {
+			vertical-align: middle;
+		}
+		.container-d {/*方式四*/
+			display: flex; 
+			justify-content: center; 
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<img class="block-a" src="../_commonImg/1.jpg" alt="">
+	</div>
+	<div class="container">
+		<img class="block-b" src="../_commonImg/1.jpg" alt="">
+	</div>
+	<div class="container container-c">
+		<img class="block-c" src="../_commonImg/1.jpg" alt="">
+	</div>
+	<div class="container container-d">
+		<img class="block-d" src="../_commonImg/1.jpg" alt="">
+		<img class="block-d" src="../_commonImg/1.jpg" alt="">
+	</div>
+</body>
+</html>
