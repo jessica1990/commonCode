@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BFC特性</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+		.container {
+			border: 1px solid blue;
+		}
+        .bfc {
+            overflow: hidden;
+        }
+		.wrap {
+			width: 80%;
+			background-color: yellow;
+			border: 1px solid red;
+		}
+		.block {
+			width: 300px;
+			height: 300px;
+			background-color: green;
+			border: 1px solid red;
+			margin: 30px;
+		}
+		.middle {
+			margin: 50px;
+		}
+		.right {
+			float: right;
+			width: 30%;
+			height: 100px;
+			background-color: pink;
+		}
+		.text {
+            background-color: orange;
+			line-height: 28px;
+            margin-bottom: 20px;
+		}
+        .container2 {
+            width: 50%;
+            height: 150px;
+            background-color: purple;
+        }
+        .margin-test {
+            margin-top: 20px;
+            height: 50px;
+            background-color: blue;
+        }
+	</style>
+</head>
+<body>
+	<div class="container bfc">
+		<div class="wrap">
+			<div class="block top"></div>
+			<div class="block middle"></div>
+			<div class="block bottom"></div>
+		</div>
+		<div class="right"></div>
+		<p class="text">
+            * 触发条件<br>
+                * 根元素
+                * position: absolute/fixed
+                * display: inline-block/table-cell/table-caption
+                * float: 非none
+                * overflow: 非visible<br>
+            * 规则<br>
+                * 属于同一个BFC的两个相邻Box垂直排列
+                * 属于同一个BFC的两个相邻Box的margin会重叠
+                * BFC中子元素的margin box的左边，与包含块（BFC）border-box的左边相接触（子元素absolute除外）
+                * BFC的区域不会与float的元素区域重叠
+                * 计算BFC的高度时候，浮动子元素也参与计算
+                * 文字层不会被浮动层覆盖，会环绕于周围<br>
+            * 应用<br>
+                * 阻止margin重叠
+                * 可以包含浮动元素 - 清除内部浮动（清除浮动的原理是两个div都位于同一个BFC中）
+                * 自适应两栏布局
+                * 可以阻止元素被浮动元素覆盖
+		</p>
+    </div>
+    <div class="container2 bfc">
+        <div class="margin-test"></div>
+    </div>
+</body>
+</html>
