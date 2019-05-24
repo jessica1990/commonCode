@@ -122,3 +122,16 @@ function deepClone(obj) {
 
 	throw new Error("Unable to copy obj! Its type isn't supported.");
 }
+
+// 实现new操作
+function myNew(fn) {
+	let inst = {};
+	if(fn.prototype !== null) {
+		inst.__proto__ = fn.prototype;
+	}
+	let res = fn.call(inst, Array.prototype.slice.call(arguments, 1));
+	if((typeof res === "object" || typeof res === "function") && res !== null) {
+		return res;
+	}
+	return inst;
+}
